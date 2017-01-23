@@ -1,0 +1,39 @@
+body,html {
+  height: 100%;
+}
+
+header {
+  height: 100px;
+  background-color: #3333ff;
+}
+
+main {
+  box-sizing: border-box;
+  display: flex;
+  padding: 40px 0;
+  height: calc(100% - 200px);
+  background-color: #33ffff;
+}
+
+article {
+  flex: 2;
+  background-color: #55cc99;
+}
+.article--about {
+  color: red;
+}
+.article--contact {
+  color: blue;
+}
+.article--recruit {
+  color: yellow;
+}
+
+nav {
+  flex: 1;
+  background-color: #cc9955;
+}
+footer {
+  height: 100px;
+  background-color: #ff33ff;
+}
