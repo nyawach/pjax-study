@@ -18,7 +18,7 @@ import RevLogger from 'rev-logger';
 // const
 const SRC = './src';
 const CONFIG = './src/config';
-const HTDOCS = './docs';
+const HTDOCS = './public';
 const BASE_PATH = '';
 const DEST = `${HTDOCS}${BASE_PATH}`;
 
