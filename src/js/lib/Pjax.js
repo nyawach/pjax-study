@@ -1,13 +1,17 @@
 import _ from 'lodash';
 import 'whatwg-fetch';
+import EventEmitter from "eventemitter2";
 
-export default class Pjax {
+export default class Pjax extends EventEmitter {
 
     constructor (opts = {}) {
+      super();
       this.link = document.querySelectorAll(opts.link || 'a');
       this.areaSelector = opts.area || 'body';
       this.area = document.querySelector(this.areaSelector);
-
+      this.EVENT = {
+        COMPLETE: "pjax:complete"
+      };
       this.initListener();
     }
 
@@ -33,6 +37,7 @@ export default class Pjax {
         .then(html => this.replaceContent(html, this.area))
         .then(() => {
           window.history.pushState(null, null, url);
+          this.emit(this.EVENT.COMPLETE);
         });
     }
 
@@ -41,7 +46,10 @@ export default class Pjax {
       fetch(url)
         .then(res => res.text())
         .then(text => this.parseHTML(text))
-        .then(html => this.replaceContent(html, this.area));
+        .then(html => this.replaceContent(html, this.area))
+        .then(() => {
+          this.emit(this.EVENT.COMPLETE);
+        });
     }
 
 
