@@ -1,10 +1,16 @@
 body,html {
   height: 100%;
 }
-
+body {
+  font-family: Helvetica, YuGothic, "游ゴシック", sans-serif;
+}
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100px;
   background-color: #3333ff;
+  border-bottom: 4px solid #333;
 }
 
 main {
@@ -18,6 +24,8 @@ main {
 article {
   flex: 2;
   background-color: #55cc99;
+  border: 4px solid #333;
+  padding: 20px;
 }
 .article--about {
   color: red;
@@ -32,8 +40,53 @@ article {
 nav {
   flex: 1;
   background-color: #cc9955;
+  padding: 20px;
+  border: {
+    top: 4px solid #333;
+    right: 4px solid #333;
+    bottom: 4px solid #333;
+  }
 }
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 4px solid #333;
   height: 100px;
   background-color: #ff33ff;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+small {
+  font-size: 12px;
+  letter-spacing: .03em;
+}
+
+.sidebar__list {
+  padding-left: 24px;
+}
+.sidebar__item {
+  display: block;
+  margin-top: 20px;
+}
+.sidebar__link {
+  color: #111;
+  font-weight: bold;
+  letter-spacing: .06em;
+  text-decoration: none;
+  line-height: 1.4;
+  &:hover {
+    border-bottom: 2px solid #111;
+  }
 }

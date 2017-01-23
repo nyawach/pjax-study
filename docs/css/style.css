@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -56,9 +57,22 @@ table {
 body, html {
   height: 100%; }
 
+body {
+  font-family: Helvetica, YuGothic, "游ゴシック", sans-serif; }
+
 header {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100px;
-  background-color: #3333ff; }
+  background-color: #3333ff;
+  border-bottom: 4px solid #333; }
 
 main {
   box-sizing: border-box;
@@ -73,7 +87,9 @@ article {
   -webkit-flex: 2;
       -ms-flex: 2;
           flex: 2;
-  background-color: #55cc99; }
+  background-color: #55cc99;
+  border: 4px solid #333;
+  padding: 20px; }
 
 .article--about {
   color: red; }
@@ -88,8 +104,51 @@ nav {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  background-color: #cc9955; }
+  background-color: #cc9955;
+  padding: 20px;
+  border-top: 4px solid #333;
+  border-right: 4px solid #333;
+  border-bottom: 4px solid #333; }
 
 footer {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 4px solid #333;
   height: 100px;
   background-color: #ff33ff; }
+
+h1, h2 {
+  font-weight: bold; }
+
+h1 {
+  font-size: 36px; }
+
+h2 {
+  font-size: 24px; }
+
+small {
+  font-size: 12px;
+  letter-spacing: .03em; }
+
+.sidebar__list {
+  padding-left: 24px; }
+
+.sidebar__item {
+  display: block;
+  margin-top: 20px; }
+
+.sidebar__link {
+  color: #111;
+  font-weight: bold;
+  letter-spacing: .06em;
+  text-decoration: none;
+  line-height: 1.4; }
+  .sidebar__link:hover {
+    border-bottom: 2px solid #111; }
